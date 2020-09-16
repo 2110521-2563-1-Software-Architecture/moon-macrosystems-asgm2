@@ -15,8 +15,11 @@ var grpc = require("grpc");
 
 var booksProto = grpc.load("books.proto");
 
+// const url = "35.240.177.194:50051"
+const url = "localhost:50051";
+
 var client = new booksProto.books.BookService(
-  "35.240.177.194:50051",
+  url,
   grpc.credentials.createInsecure()
 );
 
@@ -78,6 +81,7 @@ var command = process.argv.shift();
 if (command == "list") listBooks();
 else if (command == "insert")
   insertBook(process.argv[0], process.argv[1], process.argv[2]);
+else if (command == "inserts") insertBooks(JSON.parse(process.argv[0]));
 else if (command == "get") getBook(process.argv[0]);
 else if (command == "delete") deleteBook(process.argv[0]);
 else if (command == "watch") watchBooks();

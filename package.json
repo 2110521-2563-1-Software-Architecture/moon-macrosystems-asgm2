@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/2110521-2563-1-Software-Architecture/moon-macrosystems-asgm2#readme",
   "dependencies": {
-    "child_process": "^1.0.2"
+    "bluebird": "^3.7.2",
+    "child_process": "^1.0.2",
+    "grpc": "^1.24.3"
   }
 }
